@@ -1,0 +1,41 @@
+def calculator():
+    print("Gelişmiş Hesap Makinesi")
+    print("İşlemler:")
+    print("1. Toplama")
+    print("2. Çıkarma")
+    print("3. Çarpma")
+    print("4. Bölme")
+    print("5. Kare Alma")
+    print("6. Yüzde Hesaplama")
+    
+    try:
+        choice = int(input("Bir işlem seçin (1/2/3/4/5/6): "))
+        if choice in [1, 2, 3, 4, 5, 6]:
+            if choice in [1, 2, 3, 4]:
+                num1 = float(input("Birinci sayıyı girin: "))
+                num2 = float(input("İkinci sayıyı girin: "))
+                if choice == 1:
+                    print(f"Sonuç: {num1 + num2}")
+                elif choice == 2:
+                    print(f"Sonuç: {num1 - num2}")
+                elif choice == 3:
+                    print(f"Sonuç: {num1 * num2}")
+                elif choice == 4:
+                    if num2 != 0:
+                        print(f"Sonuç: {num1 / num2}")
+                    else:
+                        print("Hata: Bir sayı sıfıra bölünemez.")
+            elif choice == 5:
+                num = float(input("Karesini almak istediğiniz sayıyı girin: "))
+                print(f"Sonuç: {num ** 2}")
+            elif choice == 6:
+                num = float(input("Yüzde hesabı yapılacak sayıyı girin: "))
+                percent = float(input("Yüzde oranını girin: "))
+                print(f"Sonuç: {num * (percent / 100)}")
+        else:
+            print("Geçersiz seçim. Lütfen 1-6 arasında bir sayı girin.")
+    except ValueError:
+        print("Hata: Geçerli bir sayı girin.")
+
+# Programı başlat
+calculator()
